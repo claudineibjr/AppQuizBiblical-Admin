@@ -1,0 +1,111 @@
+﻿<html>
+<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBCcwdOZ_AVVnyFxk4am2xTT3WvUJcEWN8",
+    authDomain: "quizbiblico-b3eec.firebaseapp.com",
+    databaseURL: "https://quizbiblico-b3eec.firebaseio.com",
+    storageBucket: "quizbiblico-b3eec.appspot.com",
+    messagingSenderId: "739186926536"
+  };
+  firebase.initializeApp(config);
+
+  // Get a reference to the database service
+  var database = firebase.database();
+</script>
+	<head>
+
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+		<link href="css/custom.css" rel="stylesheet" media="screen" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+		<script src="bootstrap/js/jquery-1.9.1.js"></script>
+		<script src="bootstrap/js/bootstrap.js"></script>
+		
+        <script src="./js/Question.js"></script>
+        <script src="./js/Parameter.js"></script>
+		<script src="./js/Quiz.js"></script>
+
+	</head>
+	
+	<body onload="onLoad()">
+		<div class="CustomDiv">
+
+			<div class="panel panel-primary" id="parametros_Funcao">
+				<div class="panel-heading">Adicionar questão</div>
+				<div class="panel-body">
+					
+					<div class="col-sm-12">
+						<span class="label label-default">
+							Questão
+						</span><br><br>
+						<textarea style="resize: none;" class="form-control" cols="110" id="txtQuestao"></textarea>
+					</div><br>
+
+					<div class="col-sm-6">
+						<span class="label label-default">
+							Alternativa A
+						</span><br><br>
+						<textarea style="resize: none; height: 7%;" class="form-control" cols="110" id="txtAlternativa_A"></textarea>
+					</div>
+					
+					<div class="col-sm-6">
+						<span class="label label-default">
+							Alternativa B
+						</span><br><br>
+						<textarea style="resize: none; height: 7%;" class="form-control" rows="1" cols="110" id="txtAlternativa_B"></textarea><br>
+					</div>
+					
+					<div class="col-sm-6">
+						<span class="label label-default">
+							Alternativa C
+						</span><br><br>
+						<input type="text" class="form-control" id="txtAlternativa_C"/>
+						
+					</div><br>
+					
+					<div class="col-sm-6">
+						<span class="label label-default">
+							Alternativa D
+						</span><br><br>
+						<textarea style="resize: none; height: 7%;" class="form-control" rows="1" cols="110" id="txtAlternativa_D"></textarea><br>
+					</div><br>
+					
+					<div class="col-sm-12">
+						<span class="label label-default">
+							Texto bíblico
+						</span><br><br>
+						<textarea style="resize: none;" class="form-control" rows="2" cols="110" id="txtTextoBiblico"></textarea>
+					</div><br>
+					
+					<div class="col-sm-6">
+						<span class="label label-default">
+							Nível Questão
+						</span><br><br>
+						<input type="number" class="form-control" id="levelQuestion" min="1" max="3"></input>
+						
+					</div>
+					
+					<div class="col-sm-6">
+						<span class="label label-default">
+							Alternativa correta
+						</span><br><br>
+						<label class="radio-inline"><input type="radio" name="optradio" id="radioAnswerA">A</label>
+						<label class="radio-inline"><input type="radio" name="optradio" id="radioAnswerB">B</label>
+						<label class="radio-inline"><input type="radio" name="optradio" id="radioAnswerC">C</label>
+						<label class="radio-inline"><input type="radio" name="optradio" id="radioAnswerD">D</label>
+					</div>
+				
+                    <br><br><br><br><br><button style="margin-left:1%;"type="button" class="btn btn-default" id="btnAdicionar" onclick="createQuestion()">Adicionar Questão</button>
+                    	
+				</div>
+                
+
+			</div>
+			
+
+		</div>
+		
+	</body>
+</html>
