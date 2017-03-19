@@ -1,5 +1,5 @@
 // Atributos da Questão
-var strQuestion, alt_A, alt_B, alt_C, alt_D, biblicalText, levelQuestion, answer;
+var strQuestion, alt_A, alt_B, alt_C, alt_D, biblicalText, levelQuestion, answer, strTestamento, strSecao;
 
 function onLoad() {
 }
@@ -19,6 +19,28 @@ function createQuestion(){
                         )
                     )
                 );
+	strTestamento = (	document.getElementById("radioAntigoTestamento").checked ? 1 : 
+						(	document.getElementById("radioNovoTestamento").checked ? 2 : ""
+						)
+					);
+	strSecao =	(	document.getElementById("radioPentateuco").checked ? "Pentateuco" :
+					(	document.getElementById("radioHistoria_A").checked ? "História 1" :
+						(	document.getElementById("radioPoesia").checked ? "Poesia" :
+							(	document.getElementById("radioProfetasMaiores").checked ? "Profetas Maiores" :
+								(	document.getElementById("radioProfetasMenores").checked ? "Profetas Menores" :
+									(	document.getElementById("radioEvangelhos").checked ? "Evangelhos" :
+										(	document.getElementById("radioHistoria_B").checked ? "História 2" :
+											(	document.getElementById("radioCartas").checked ? "Cartas" :
+												(	document.getElementById("radioProfecia").checked ? "Cartas" : ""
+												)
+											)
+										)
+									)
+								)
+							)
+						)
+					)
+				);
 
 	if (!verifyFields()){
 	    alert("False");

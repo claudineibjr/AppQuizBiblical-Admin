@@ -36,28 +36,28 @@
 				<div class="panel-heading">Adicionar questão</div>
 				<div class="panel-body">
 					
-					<div class="col-sm-12">
+					<div class="col-sm-12" style="margin-top:1%;">
 						<span class="label label-default">
 							Questão
 						</span><br><br>
 						<textarea style="resize: none;" class="form-control" cols="110" id="txtQuestao"></textarea>
 					</div><br>
 
-					<div class="col-sm-6">
+					<div class="col-sm-6" style="margin-top:1%;">
 						<span class="label label-default">
 							Alternativa A
 						</span><br><br>
 						<textarea style="resize: none; height: 7%;" class="form-control" cols="110" id="txtAlternativa_A"></textarea>
 					</div>
 					
-					<div class="col-sm-6">
+					<div class="col-sm-6" style="margin-top:1%;">
 						<span class="label label-default">
 							Alternativa B
 						</span><br><br>
 						<textarea style="resize: none; height: 7%;" class="form-control" rows="1" cols="110" id="txtAlternativa_B"></textarea><br>
 					</div>
 					
-					<div class="col-sm-6">
+					<div class="col-sm-6" style="margin-top:1%;">
 						<span class="label label-default">
 							Alternativa C
 						</span><br><br>
@@ -65,21 +65,21 @@
 						
 					</div><br>
 					
-					<div class="col-sm-6">
+					<div class="col-sm-6" style="margin-top:1%;">
 						<span class="label label-default">
 							Alternativa D
 						</span><br><br>
 						<textarea style="resize: none; height: 7%;" class="form-control" rows="1" cols="110" id="txtAlternativa_D"></textarea><br>
 					</div><br>
 					
-					<div class="col-sm-12">
+					<div class="col-sm-12" style="margin-top:1%;">
 						<span class="label label-default">
 							Texto bíblico
 						</span><br><br>
 						<textarea style="resize: none;" class="form-control" rows="2" cols="110" id="txtTextoBiblico"></textarea>
 					</div><br>
 					
-					<div class="col-sm-6">
+					<div class="col-sm-6" style="margin-top:1%;">
 						<span class="label label-default">
 							Nível Questão
 						</span><br><br>
@@ -87,7 +87,7 @@
 						
 					</div>
 					
-					<div class="col-sm-6">
+					<div class="col-sm-2" style="margin-top:1%;">
 						<span class="label label-default">
 							Alternativa correta
 						</span><br><br>
@@ -96,8 +96,31 @@
 						<label class="radio-inline"><input type="radio" name="optradio" id="radioAnswerC">C</label>
 						<label class="radio-inline"><input type="radio" name="optradio" id="radioAnswerD">D</label>
 					</div>
+					
+					<div class="col-sm-4" style="margin-top:1%;">
+						<span class="label label-default">
+							Testamento
+						</span><br><br>
+						<label class="radio-inline"><input type="radio" name="optradio" id="radioAntigoTestamento">Antigo Testamento</label>
+						<label class="radio-inline"><input type="radio" name="optradio" id="radioNovoTestamento">Novo Testamento</label>
+					</div><br><br><br><br>
+					
+					<div class="col-sm-12" style="margin-top:1%;">
+						<span class="label label-default">
+							Seção da bíblia
+						</span><br><br>
+						<label class="radio-inline"><input type="radio" name="optradio" id="radioPentateuco">Pentateuco</label>
+						<label class="radio-inline"><input type="radio" name="optradio" id="radioHistoria_A">História (Antigo Testamento)</label>
+						<label class="radio-inline"><input type="radio" name="optradio" id="radioPoesia">Poesia</label>
+						<label class="radio-inline"><input type="radio" name="optradio" id="radioProfetasMaiores">Profetas maiores</label>
+						<label class="radio-inline"><input type="radio" name="optradio" id="radioProfetasMenores">Profetas menores</label>
+						<label class="radio-inline"><input type="radio" name="optradio" id="radioEvangelhos">Evangelhos</label>
+						<label class="radio-inline"><input type="radio" name="optradio" id="radioHistoria_B">História (Novo testamento)</label>
+						<label class="radio-inline"><input type="radio" name="optradio" id="radioCartas">Cartas</label>
+						<label class="radio-inline"><input type="radio" name="optradio" id="radioProfecia">Profecia</label>
+					</div>
 				
-                    <br><br><br><br><br><button style="margin-left:1%;"type="button" class="btn btn-default" id="btnAdicionar" onclick="createQuestion()">Adicionar Questão</button>
+                    <br><br><br><button style="margin-left:1%;"type="button" class="btn btn-default" id="btnAdicionar" onclick="createQuestion()">Adicionar Questão</button>
                     	
 				</div>
                 

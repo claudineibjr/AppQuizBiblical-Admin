@@ -1,4 +1,4 @@
-function Question(_strQuestion, _strAnswer, _strAltA, _strAltB, _strAltC, _strAltD, _strTextBiblical, _intLevelQuestion) {
+function Question(_strQuestion, _strAnswer, _strAltA, _strAltB, _strAltC, _strAltD, _strTextBiblical, _intLevelQuestion, _strTestamento, _strSecao) {
 
     this.idQuestion;
     this.strQuestion = _strQuestion
@@ -9,6 +9,8 @@ function Question(_strQuestion, _strAnswer, _strAltA, _strAltB, _strAltC, _strAl
     this.strAlternative_D = _strAltD
     this.strTextBiblical = _strTextBiblical;
     this.intLevelQuestion = _intLevelQuestion;
+	this.strTestamento = _strTestamento;
+	this.strSecao = _strSecao;
 
     //Criação da pergunta no banco de dados do Firebase
     this.addQuestion = function () {
