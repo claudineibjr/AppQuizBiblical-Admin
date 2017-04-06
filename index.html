@@ -36,50 +36,49 @@
 				<div class="panel-heading">Adicionar questão</div>
 				<div class="panel-body">
 					
-					<div class="col-sm-12" style="margin-top:1%;">
+					<div class="col-lg-12" style="margin-top:1%;">
 						<span class="label label-default">
 							Questão
 						</span><br><br>
 						<textarea style="resize: none;" class="form-control" cols="110" id="txtQuestao"></textarea>
 					</div><br>
 
-					<div class="col-sm-6" style="margin-top:1%;">
+					<div class="col-lg-6" style="margin-top: 1%;">
 						<span class="label label-default">
 							Alternativa A
 						</span><br><br>
-						<textarea style="resize: none; height: 7%;" class="form-control" cols="110" id="txtAlternativa_A"></textarea>
+						<input type="text" class="form-control" id="txtAlternativa_A"/>
 					</div>
 					
-					<div class="col-sm-6" style="margin-top:1%;">
+					<div class="col-lg-6" style="margin-top: 1%;" >
 						<span class="label label-default">
 							Alternativa B
 						</span><br><br>
-						<textarea style="resize: none; height: 7%;" class="form-control" rows="1" cols="110" id="txtAlternativa_B"></textarea><br>
+						<input type="text" class="form-control" id="txtAlternativa_B"/>
 					</div>
 					
-					<div class="col-sm-6" style="margin-top:1%;">
+					<div class="col-lg-6" style="margin-top: 1%;" >
 						<span class="label label-default">
 							Alternativa C
 						</span><br><br>
 						<input type="text" class="form-control" id="txtAlternativa_C"/>
-						
 					</div><br>
 					
-					<div class="col-sm-6" style="margin-top:1%;">
+					<div class="col-lg-6" style="margin-top: 1%;" >
 						<span class="label label-default">
 							Alternativa D
 						</span><br><br>
-						<textarea style="resize: none; height: 7%;" class="form-control" rows="1" cols="110" id="txtAlternativa_D"></textarea><br>
+						<input type="text" class="form-control" id="txtAlternativa_D"/>
 					</div><br>
 					
-					<div class="col-sm-12" style="margin-top:1%;">
+					<div class="col-lg-12" style="margin-top: 10%;">
 						<span class="label label-default">
 							Texto bíblico
 						</span><br><br>
 						<textarea style="resize: none;" class="form-control" rows="2" cols="110" id="txtTextoBiblico"></textarea>
 					</div><br>
 					
-					<div class="col-sm-6" style="margin-top:1%;">
+					<div class="col-lg-6">
 						<span class="label label-default">
 							Nível Questão
 						</span><br><br>
@@ -87,7 +86,7 @@
 						
 					</div>
 					
-					<div class="col-sm-2" style="margin-top:1%;">
+					<div class="col-lg-2">
 						<span class="label label-default">
 							Alternativa correta
 						</span><br><br>
@@ -97,7 +96,7 @@
 						<label class="radio-inline"><input type="radio" name="optradio" id="radioAnswerD">D</label>
 					</div>
 					
-					<div class="col-sm-4" style="margin-top:1%;">
+					<div class="col-lg-4">
 						<span class="label label-default">
 							Testamento
 						</span><br><br>
@@ -105,7 +104,7 @@
 						<label class="radio-inline"><input type="radio" name="opttestamento" id="radioNovoTestamento">Novo Testamento</label>
 					</div><br><br><br><br>
 					
-					<div class="col-sm-12" style="margin-top:1%;">
+					<div class="col-lg-12">
 						<span class="label label-default">
 							Seção da bíblia
 						</span><br><br>
@@ -120,7 +119,8 @@
 						<label class="radio-inline"><input type="radio" name="optradio" id="radioProfecia">Profecia</label>
 					</div>
 				
-                    <br><br><br><button style="margin-left:1%;"type="button" class="btn btn-default" id="btnAdicionar" onclick="createQuestion()">Adicionar Questão</button>
+                    <br><br><br>
+					<button type="button" class="btn btn-default" id="btnAdicionar" onclick="createQuestion()">Adicionar Questão</button>
                     	
 				</div>
                 
