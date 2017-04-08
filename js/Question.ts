@@ -1,18 +1,20 @@
+var firebase: any;
+
 class Question{
 
     idQuestion: number;
     strQuestion: string;
-    strAnswer: string;
+    strAnswer: number;
     strAlternative_A: string;
     strAlternative_B: string;
     strAlternative_C: string;
     strAlternative_D: string;
     strTextBiblical: string;
-    intLevelQuestion: string;
+    intLevelQuestion: number;
     strTestamento: string;
     strSecao: string;
 
-    constructor(_strQuestion: string, _strAnswer: string, _strAltA: string, _strAltB: string, _strAltC: string, _strAltD: string, _strTextBiblical: string, _intLevelQuestion: string, _strTestamento: string, _strSecao: string){
+    constructor(_strQuestion: string, _strAnswer: number, _strAltA: string, _strAltB: string, _strAltC: string, _strAltD: string, _strTextBiblical: string, _intLevelQuestion: number, _strTestamento: string, _strSecao: string){
         this.idQuestion;
         this.strQuestion = _strQuestion
         this.strAnswer = _strAnswer
@@ -39,14 +41,16 @@ class Question{
         alert("Espera um pouco... s� um pouco!");
         firebase.database().ref('question/' + nextQuestionNum).set({
             idQuestion: nextQuestionNum,
-            question: strQuestion,
-            answer: answer,
-            alternative_A: alt_A,
-            alternative_B: alt_B,
-            alternative_C: alt_C,
-            alternative_D: alt_D,
+            question: this.strQuestion,
+            answer: this.strAnswer,
+            alternative_A: this.strAlternative_A,
+            alternative_B: this.strAlternative_B,
+            alternative_C: this.strAlternative_C,
+            alternative_D: this.strAlternative_D,
             textBiblical: this.strTextBiblical,
-            levelQuestion: levelQuestion
+            levelQuestion: this.intLevelQuestion,
+            testamento: this.strTestamento,
+            secaobiblia: this.strSecao
         });
         
         var updates = {};

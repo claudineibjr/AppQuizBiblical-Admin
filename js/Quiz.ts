@@ -1,73 +1,85 @@
 // Atributos da Questão
-var strQuestion, alt_A, alt_B, alt_C, alt_D, biblicalText, levelQuestion, answer, strTestamento, strSecao;
+var question, alt_A, alt_B, alt_C, alt_D, biblicalText, levelQuestion, answer, strTestamento, strSecao;
+
+function onLoad(){
+
+}
 
 function createQuestion(): void{
-	strQuestion = (( < HTMLInputElement > document.getElementById("txtQuestao")).value);
+
+	question = (( < HTMLInputElement > document.getElementById("txtQuestao")).value);
 	alt_A = (( < HTMLInputElement > document.getElementById("txtAlternativa_A")).value);
 	alt_B = (( < HTMLInputElement > document.getElementById("txtAlternativa_B")).value);
 	alt_C = (( < HTMLInputElement > document.getElementById("txtAlternativa_C")).value);
 	alt_D = (( < HTMLInputElement > document.getElementById("txtAlternativa_D")).value);
 	biblicalText = (( < HTMLInputElement > document.getElementById("txtTextoBiblico")).value);
 	levelQuestion = parseInt( (( < HTMLInputElement > document.getElementById("levelQuestion")).value));
-	answer = ((( < HTMLInputElement > document.getElementById("radioAnswerA")).checked) ? 0 :
-                    ((( < HTMLInputElement > document.getElementById("radioAnswerB")).checked) ? 1 :
-                        ((( < HTMLInputElement > document.getElementById("radioAnswerC")).checked) ? 2 :
-                            ((( < HTMLInputElement > document.getElementById("radioAnswerD")).checked) ? 3 : "")
-                        )
-                    )
-                );
 
-	strTestamento = (	(( < HTMLInputElement > document.getElementById("radioAntigoTestamento")).checked) ? 1 : 
-						(	(( < HTMLInputElement > document.getElementById("radioNovoTestamento")).checked) ? 2 : ""
-						)
-					);
-	
-	strSecao =	(	(( < HTMLInputElement > document.getElementById("radioPentateuco")).checked) ? "Pentateuco" :
-					(	(( < HTMLInputElement > document.getElementById("radioHistoria_A")).checked) ? "História 1" :
-						(	(( < HTMLInputElement > document.getElementById("radioPoesia")).checked) ? "Poesia" :
-							(	(( < HTMLInputElement > document.getElementById("radioProfetasMaiores")).checked) ? "Profetas Maiores" :
-								(	(( < HTMLInputElement > document.getElementById("radioProfetasMenores")).checked) ? "Profetas Menores" :
-									(	(( < HTMLInputElement > document.getElementById("radioEvangelhos")).checked) ? "Evangelhos" :
-										(	(( < HTMLInputElement > document.getElementById("radioHistoria_B")).checked) ? "História 2" :
-											(	(( < HTMLInputElement > document.getElementById("radioCartas")).checked) ? "Cartas" :
-												(	(( < HTMLInputElement > document.getElementById("radioProfecia")).checked) ? "Profecia" : ""
-												)
-											)
-										)
-									)
-								)
-							)
-						)
-					)
-				);
+	answer = parseInt(getChecado("alternativas"));
+	strTestamento = getChecado("testamentos");
+	strSecao = getChecado("secoes");
 
 	if (!verifyFields()){
 	    alert("False");
 	} else {
-	    var question = new Question(strQuestion, answer, alt_A, alt_B, alt_C, alt_D, biblicalText, levelQuestion, strTestamento, strSecao);
+	    var question = new Question(question, answer, alt_A, alt_B, alt_C, alt_D, biblicalText, levelQuestion, strTestamento, strSecao);
 	    question.addQuestion();
 		limpaTela();
 	}
 }
+
+function getChecado(nomeRadioButton: string): string{
+	var opcoes: NodeListOf<HTMLElement> = document.getElementsByName(nomeRadioButton);
+	var checado: string;
+
+	for (var iCount: number = 0; iCount < opcoes.length; iCount++){
+		if ( (<HTMLInputElement> opcoes[iCount]).checked )
+			checado = (<HTMLInputElement> opcoes[iCount]).value;
+	}
+
+	return checado;
+}
+
 function limpaTela() {
-    strQuestion.value = "";
-    alt_A.value = "";
-    alt_B.value = "";
-    alt_C.value = "";
-    alt_D.value = "";
-    biblicalText.value = "";
-    levelQuestion.value = 1;
+    ( < HTMLInputElement > document.getElementById("txtQuestao")).value = "";
+
+	( < HTMLInputElement > document.getElementById("txtAlternativa_A")).value = "";
+	( < HTMLInputElement > document.getElementById("txtAlternativa_B")).value = "";
+	( < HTMLInputElement > document.getElementById("txtAlternativa_C")).value = "";
+	( < HTMLInputElement > document.getElementById("txtAlternativa_D")).value = "";
+
+	( < HTMLInputElement > document.getElementById("txtTextoBiblico")).value = "";
+	
+	( < HTMLInputElement > document.getElementById("levelQuestion")).value = "0";
+	
+	( < HTMLInputElement > document.getElementById("radioAnswerA")).checked = false;
+	( < HTMLInputElement > document.getElementById("radioAnswerB")).checked = false;
+	( < HTMLInputElement > document.getElementById("radioAnswerC")).checked = false;
+	( < HTMLInputElement > document.getElementById("radioAnswerD")).checked = false;
+
+	( < HTMLInputElement > document.getElementById("radioAntigoTestamento")).checked = false;
+	( < HTMLInputElement > document.getElementById("radioNovoTestamento")).checked = false;
+
+	( < HTMLInputElement > document.getElementById("radioPentateuco")).checked = false;
+	( < HTMLInputElement > document.getElementById("radioHistoria_A")).checked = false;
+	( < HTMLInputElement > document.getElementById("radioPoesia")).checked = false;
+	( < HTMLInputElement > document.getElementById("radioProfetasMaiores")).checked = false;
+	( < HTMLInputElement > document.getElementById("radioProfetasMenores")).checked = false;
+	( < HTMLInputElement > document.getElementById("radioEvangelhos")).checked = false;
+	( < HTMLInputElement > document.getElementById("radioHistoria_B")).checked = false;
+	( < HTMLInputElement > document.getElementById("radioCartas")).checked = false;
+	( < HTMLInputElement > document.getElementById("radioProfecia")).checked = false;
 }
 function verifyFields(){
 	
-	if (	strQuestion != "" && 
+	if (	question != "" && 
 			alt_A != "" && 
 			alt_B != "" && 
 			alt_C != "" && 
 			alt_D != "" && 
 			levelQuestion != "" && 
 			(answer == 0 || answer == 1 || answer == 2 || answer == 3) && 
-			(strTestamento == 1 || strTestamento == 2) && 
+			strTestamento != "" && 
 			strSecao != ""
 		)
 		return true;

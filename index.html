@@ -40,7 +40,7 @@
 						<span class="label label-default">
 							Questão
 						</span><br><br>
-						<textarea style="resize: none;" class="form-control" cols="110" id="txtQuestao"></textarea>
+						<textarea style="resize: none;" class="form-control" cols="110" rows="1" id="txtQuestao"></textarea>
 					</div><br>
 
 					<div class="col-lg-6" style="margin-top: 1%;">
@@ -75,7 +75,7 @@
 						<span class="label label-default">
 							Texto bíblico
 						</span><br><br>
-						<textarea style="resize: none;" class="form-control" rows="2" cols="110" id="txtTextoBiblico"></textarea>
+						<textarea style="resize: none;" class="form-control" rows="1" cols="110" id="txtTextoBiblico"></textarea>
 					</div><br>
 					
 					<div class="col-lg-6">
@@ -90,38 +90,38 @@
 						<span class="label label-default">
 							Alternativa correta
 						</span><br><br>
-						<label class="radio-inline"><input type="radio" name="optradio" id="radioAnswerA">A</label>
-						<label class="radio-inline"><input type="radio" name="optradio" id="radioAnswerB">B</label>
-						<label class="radio-inline"><input type="radio" name="optradio" id="radioAnswerC">C</label>
-						<label class="radio-inline"><input type="radio" name="optradio" id="radioAnswerD">D</label>
+						<label class="radio-inline"><input type="radio" name="alternativas" value = "0" id="radioAnswerA">A</label>
+						<label class="radio-inline"><input type="radio" name="alternativas" value = "1" id="radioAnswerB">B</label>
+						<label class="radio-inline"><input type="radio" name="alternativas" value = "2" id="radioAnswerC">C</label>
+						<label class="radio-inline"><input type="radio" name="alternativas" value = "3" id="radioAnswerD">D</label>
 					</div>
 					
 					<div class="col-lg-4">
 						<span class="label label-default">
 							Testamento
 						</span><br><br>
-						<label class="radio-inline"><input type="radio" name="opttestamento" id="radioAntigoTestamento">Antigo Testamento</label>
-						<label class="radio-inline"><input type="radio" name="opttestamento" id="radioNovoTestamento">Novo Testamento</label>
+						<label class="radio-inline"><input type="radio" name="testamentos" value = "Antigo" id="radioAntigoTestamento">Antigo Testamento</label>
+						<label class="radio-inline"><input type="radio" name="testamentos" value = "Novo" id="radioNovoTestamento">Novo Testamento</label>
 					</div><br><br><br><br>
 					
 					<div class="col-lg-12">
 						<span class="label label-default">
 							Seção da bíblia
 						</span><br><br>
-						<label class="radio-inline"><input type="radio" name="optsecao" id="radioPentateuco">Pentateuco</label>
-						<label class="radio-inline"><input type="radio" name="optsecao" id="radioHistoria_A">História (Antigo Testamento)</label>
-						<label class="radio-inline"><input type="radio" name="optsecao" id="radioPoesia">Poesia</label>
-						<label class="radio-inline"><input type="radio" name="optsecao" id="radioProfetasMaiores">Profetas maiores</label>
-						<label class="radio-inline"><input type="radio" name="optsecao" id="radioProfetasMenores">Profetas menores</label>
-						<label class="radio-inline"><input type="radio" name="optsecao" id="radioEvangelhos">Evangelhos</label>
-						<label class="radio-inline"><input type="radio" name="optsecao" id="radioHistoria_B">História (Novo testamento)</label>
-						<label class="radio-inline"><input type="radio" name="optsecao" id="radioCartas">Cartas</label>
-						<label class="radio-inline"><input type="radio" name="optsecao" id="radioProfecia">Profecia</label>
+						<label class="radio-inline"><input type="radio" name="secoes" value = "Pentateuco" 			id="radioPentateuco">Pentateuco</label>
+						<label class="radio-inline"><input type="radio" name="secoes" value = "História 1" 			id="radioHistoria_A">História (Antigo Testamento)</label>
+						<label class="radio-inline"><input type="radio" name="secoes" value = "Poesia" 				id="radioPoesia">Poesia</label>
+						<label class="radio-inline"><input type="radio" name="secoes" value = "Profetas Maiores" 	id="radioProfetasMaiores">Profetas maiores</label>
+						<label class="radio-inline"><input type="radio" name="secoes" value = "Profetas Menores" 	id="radioProfetasMenores">Profetas menores</label>
+						<label class="radio-inline"><input type="radio" name="secoes" value = "Evangelhos" 			id="radioEvangelhos">Evangelhos</label>
+						<label class="radio-inline"><input type="radio" name="secoes" value = "História 2" 			id="radioHistoria_B">História (Novo testamento)</label>
+						<label class="radio-inline"><input type="radio" name="secoes" value = "Cartas" 				id="radioCartas">Cartas</label>
+						<label class="radio-inline"><input type="radio" name="secoes" value = "Profecia" 			id="radioProfecia">Profecia</label>
 					</div>
 				
                     <br><br><br>
 					<button type="button" class="btn btn-default" id="btnAdicionar" onclick="createQuestion()">Adicionar Questão</button>
-                    	
+					                    	
 				</div>
                 
 

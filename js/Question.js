@@ -1,3 +1,4 @@
+var firebase;
 var Question = (function () {
     function Question(_strQuestion, _strAnswer, _strAltA, _strAltB, _strAltC, _strAltD, _strTextBiblical, _intLevelQuestion, _strTestamento, _strSecao) {
         this.idQuestion;
@@ -22,14 +23,16 @@ var Question = (function () {
         alert("Espera um pouco... s� um pouco!");
         firebase.database().ref('question/' + nextQuestionNum).set({
             idQuestion: nextQuestionNum,
-            question: strQuestion,
-            answer: answer,
-            alternative_A: alt_A,
-            alternative_B: alt_B,
-            alternative_C: alt_C,
-            alternative_D: alt_D,
+            question: this.strQuestion,
+            answer: this.strAnswer,
+            alternative_A: this.strAlternative_A,
+            alternative_B: this.strAlternative_B,
+            alternative_C: this.strAlternative_C,
+            alternative_D: this.strAlternative_D,
             textBiblical: this.strTextBiblical,
-            levelQuestion: levelQuestion
+            levelQuestion: this.intLevelQuestion,
+            testamento: this.strTestamento,
+            secaobiblia: this.strSecao
         });
         var updates = {};
         nextQuestionNum++;
