@@ -50,7 +50,7 @@ class Question{
             textBiblical: this.strTextBiblical,
             levelQuestion: this.intLevelQuestion,
             testamento: this.strTestamento,
-            secaobiblia: this.strSecao
+            secaoBiblia: this.strSecao
         });
         
         var updates = {};
