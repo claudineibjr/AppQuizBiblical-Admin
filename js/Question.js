@@ -1,6 +1,6 @@
 var firebase;
 var Question = (function () {
-    function Question(_strQuestion, _strAnswer, _strAltA, _strAltB, _strAltC, _strAltD, _strTextBiblical, _intLevelQuestion, _strTestamento, _strSecao) {
+    function Question(_strQuestion, _strAnswer, _strAltA, _strAltB, _strAltC, _strAltD, _strTextBiblical, _intLevelQuestion, _strTestamento, _strSecao, _referenciaBiblica) {
         this.idQuestion;
         this.strQuestion = _strQuestion;
         this.strAnswer = _strAnswer;
@@ -12,6 +12,7 @@ var Question = (function () {
         this.intLevelQuestion = _intLevelQuestion;
         this.strTestamento = _strTestamento;
         this.strSecao = _strSecao;
+        this.referenciaBiblica = _referenciaBiblica;
     }
     // Criação da pergunta no banco de dados do Firebase
     Question.prototype.addQuestion = function () {
@@ -32,7 +33,8 @@ var Question = (function () {
             textBiblical: this.strTextBiblical,
             levelQuestion: this.intLevelQuestion,
             testamento: this.strTestamento,
-            secaoBiblia: this.strSecao
+            secaoBiblia: this.strSecao,
+            referenciaBiblica: this.referenciaBiblica
         });
         var updates = {};
         nextQuestionNum++;

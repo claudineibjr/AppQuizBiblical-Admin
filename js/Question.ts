@@ -13,8 +13,9 @@ class Question{
     intLevelQuestion: number;
     strTestamento: string;
     strSecao: string;
+    referenciaBiblica: string;
 
-    constructor(_strQuestion: string, _strAnswer: number, _strAltA: string, _strAltB: string, _strAltC: string, _strAltD: string, _strTextBiblical: string, _intLevelQuestion: number, _strTestamento: string, _strSecao: string){
+    constructor(_strQuestion: string, _strAnswer: number, _strAltA: string, _strAltB: string, _strAltC: string, _strAltD: string, _strTextBiblical: string, _intLevelQuestion: number, _strTestamento: string, _strSecao: string, _referenciaBiblica: string){
         this.idQuestion;
         this.strQuestion = _strQuestion
         this.strAnswer = _strAnswer
@@ -26,6 +27,7 @@ class Question{
         this.intLevelQuestion = _intLevelQuestion;
         this.strTestamento = _strTestamento;
         this.strSecao = _strSecao;
+        this.referenciaBiblica = _referenciaBiblica;
     }
 
     // Criação da pergunta no banco de dados do Firebase
@@ -50,7 +52,8 @@ class Question{
             textBiblical: this.strTextBiblical,
             levelQuestion: this.intLevelQuestion,
             testamento: this.strTestamento,
-            secaoBiblia: this.strSecao
+            secaoBiblia: this.strSecao,
+            referenciaBiblica: this.referenciaBiblica
         });
         
         var updates = {};

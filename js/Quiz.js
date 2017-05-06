@@ -1,5 +1,5 @@
 // Atributos da Questão
-var question, alt_A, alt_B, alt_C, alt_D, biblicalText, levelQuestion, answer, strTestamento, strSecao;
+var question, alt_A, alt_B, alt_C, alt_D, biblicalText, levelQuestion, answer, strTestamento, strSecao, strReferencia;
 function onLoad() {
 }
 function createQuestion() {
@@ -10,6 +10,7 @@ function createQuestion() {
     alt_D = (document.getElementById("txtAlternativa_D").value);
     biblicalText = (document.getElementById("txtTextoBiblico").value);
     levelQuestion = parseInt((document.getElementById("levelQuestion").value));
+    strReferencia = (document.getElementById("txtReferenciaBiblica").value);
     answer = parseInt(getChecado("alternativas"));
     strTestamento = getChecado("testamentos");
     strSecao = getChecado("secoes");
@@ -17,7 +18,7 @@ function createQuestion() {
         alert("False");
     }
     else {
-        var question = new Question(question, answer, alt_A, alt_B, alt_C, alt_D, biblicalText, levelQuestion, strTestamento, strSecao);
+        var question = new Question(question, answer, alt_A, alt_B, alt_C, alt_D, biblicalText, levelQuestion, strTestamento, strSecao, strReferencia);
         question.addQuestion();
         limpaTela();
     }
@@ -38,6 +39,7 @@ function limpaTela() {
     document.getElementById("txtAlternativa_C").value = "";
     document.getElementById("txtAlternativa_D").value = "";
     document.getElementById("txtTextoBiblico").value = "";
+    document.getElementById("txtReferenciaBiblica").value = "";
     document.getElementById("levelQuestion").value = "0";
     document.getElementById("radioAnswerA").checked = false;
     document.getElementById("radioAnswerB").checked = false;
@@ -64,7 +66,8 @@ function verifyFields() {
         levelQuestion != "" &&
         (answer == 0 || answer == 1 || answer == 2 || answer == 3) &&
         strTestamento != "" &&
-        strSecao != "")
+        strSecao != "" &&
+        strReferencia != "")
         return true;
     else
         return false;
